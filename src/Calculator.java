@@ -6,12 +6,11 @@ import java.util.Scanner;
 // Made by https://github.com/pepijngbr
 
 //TODO: Add validation when entering String as number
-//TODO: Add double support
 
 public class Calculator {
     public static void main(String[] args) {
-        int firstNumber;
-        int secondNumber;
+        double firstNumber;
+        double secondNumber;
         String userInput;
 
         Scanner input = new Scanner(System.in);
@@ -35,20 +34,21 @@ public class Calculator {
             System.out.print("----------\n");
 
             System.out.print("Input: ");
-            userInput = input.next(); // Enter operator as String
+            userInput = input.next(); // Enter input as String
 
             switch (userInput) {
                 case "+" -> {
                     System.out.print("\nAdding two numbers\n");
 
                     System.out.print("Enter first number: ");
-                    firstNumber = input.nextInt(); // Enter firstNumber as int
+                    firstNumber = input.nextDouble(); // Enter firstNumber as double
 
                     System.out.printf("Add amount to " + firstNumber + ": ");
-                    secondNumber = input.nextInt(); // Enter secondNumber as int
+                    secondNumber = input.nextDouble(); // Enter secondNumber as double
 
                     System.out.print("\n----------\n");
-                    System.out.printf(firstNumber + " + " + secondNumber + "\n");
+                    System.out.printf("Calculation: " + firstNumber + " + " + secondNumber + "\n"); // Print calculation
+
                     System.out.print("Outcome: ");
                     System.out.println(add(firstNumber, secondNumber)); // Print outcome from addition
                 }
@@ -56,13 +56,14 @@ public class Calculator {
                     System.out.print("\nSubtracting.\n");
 
                     System.out.print("Enter first number: ");
-                    firstNumber = input.nextInt(); // Enter firstNumber as int
+                    firstNumber = input.nextDouble(); // Enter firstNumber as double
 
                     System.out.printf("Subtract amount from " + firstNumber + ": ");
-                    secondNumber = input.nextInt(); // Enter secondNumber as int
+                    secondNumber = input.nextDouble(); // Enter secondNumber as double
 
                     System.out.print("\n----------\n");
-                    System.out.printf(firstNumber + " - " + secondNumber + "\n");
+                    System.out.printf("Calculation: " + firstNumber + " - " + secondNumber + "\n"); // Print calculation
+
                     System.out.print("Outcome: ");
                     System.out.println(subtract(firstNumber, secondNumber)); // Print outcome from subtraction
                 }
@@ -70,13 +71,14 @@ public class Calculator {
                     System.out.print("\nMultiplying two numbers.\n");
 
                     System.out.print("Enter first number: ");
-                    firstNumber = input.nextInt(); // Enter firstNumber as int
+                    firstNumber = input.nextDouble(); // Enter firstNumber as double
 
                     System.out.printf("Multiply amount with " + firstNumber + ": ");
-                    secondNumber = input.nextInt(); // Enter secondNumber as int
+                    secondNumber = input.nextDouble(); // Enter secondNumber as double
 
                     System.out.print("\n----------\n");
-                    System.out.printf(firstNumber + " * " + secondNumber + "\n");
+                    System.out.printf("Calculation: " + firstNumber + " * " + secondNumber + "\n"); // Print calculation
+
                     System.out.print("Outcome: ");
                     System.out.println(multiply(firstNumber, secondNumber)); // Print outcome from multiplication
                 }
@@ -84,13 +86,14 @@ public class Calculator {
                     System.out.print("\nDividing.\n");
 
                     System.out.print("Enter first number: ");
-                    firstNumber = input.nextInt();
+                    firstNumber = input.nextDouble(); // Enter firstNumber as double
 
                     System.out.printf("Divide amount with " + firstNumber + ": ");
-                    secondNumber = input.nextInt(); // Enter secondNumber as int
+                    secondNumber = input.nextDouble(); // Enter secondNumber as double
 
                     System.out.print("\n----------\n");
-                    System.out.printf(firstNumber + " / " + secondNumber + "\n");
+                    System.out.printf("Calculation: " + firstNumber + " / " + secondNumber + "\n"); // Print calculation
+
                     System.out.print("Outcome: ");
                     System.out.println(divide(firstNumber, secondNumber)); // Print outcome from division
                 }
@@ -102,19 +105,19 @@ public class Calculator {
         }
     }
 
-    public static int add(int num1, int num2) {
+    public static double add(double num1, double num2) {
         return num1 + num2;
     }
 
-    public static int subtract(int num1, int num2) {
+    public static double subtract(double num1, double num2) {
         return num1 - num2;
     }
 
-    public static int multiply(int num1, int num2) {
+    public static double multiply(double num1, double num2) {
         return num1 * num2;
     }
 
-    public static int divide(int num1, int num2) {
+    public static double divide(double num1, double num2) {
         return num1 / num2;
     }
 }
